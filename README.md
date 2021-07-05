@@ -1,10 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+Launches the node modules.
 
 ### `npm start`
 
@@ -29,42 +28,24 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Here is the explanation..
+### 1. Assets folder
+The assets folder contains images and scss folder for styling. In this project architecture, I am using centralized styling with SCSS files. I am more comfortable with that.
+If you prefer to include style in each component, that's not a problem. But, you should consider locating a default or shared styling here.
+You can rename it to css or styles if you don't use scss/sass in your project.
+### 2. Components folder
+The components folder contains a collection of UI components like button, custom input field, modal, etc that will be shared and used across files in the project.
+You can rename it to 'elements' or 'UIs' if you dont like 'components'.
+Each component has a test file to help us maintain them because they used widely in the project.
+### 3. Pages folder
+The pages folder reflects the routes of the application. Each component inside this folder has its own route.
+A page component will contain children from components folder, parts folder, or its own subfolder. It has its own state, and usually call some services as well.
+### 4. Parts
+The parts folder is almost the same as components folder. It contains a reusable components that used in the pages.
+The difference is that components in parts folder reflect parts of a page, like footer, sidebar, and header, while the components folder contains standalone UI components like button, form, or input field.
+Sometime, A component in parts can use some components from the components folder.
+### 5. Utils
+The utils folder is just a place to locate some utility functions that used repeatedly in the project. Files in the utils folder should only contain some functions like date formatting, string conversion, etc.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 6. __tests__
+The test folder is just a place to locate some unit test in the project. 
