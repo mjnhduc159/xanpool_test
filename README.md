@@ -28,7 +28,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Here is the explanation..
 ### 1. Assets folder
 The assets folder contains images and scss folder for styling. In this project architecture, I am using centralized styling with SCSS files. I am more comfortable with that.
-
 If you prefer to include style in each component, that's not a problem. But, you should consider locating a default or shared styling here.
-
 You can rename it to css or styles if you don't use scss/sass in your project.
+### 2. Components folder
+The components folder contains a collection of UI components like button, custom input field, modal, etc that will be shared and used across files in the project.
+You can rename it to 'elements' or 'UIs' if you dont like 'components'.
+Each component has a test file to help us maintain them because they used widely in the project.
+### 3. Pages folder
+The pages folder reflects the routes of the application. Each component inside this folder has its own route.
+A page component will contain children from components folder, parts folder, or its own subfolder. It has its own state, and usually call some services as well.
