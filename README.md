@@ -25,4 +25,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### 1. Assets folder
+The assets folder contains images and scss folder for styling. In this project architecture, I am using centralized styling with SCSS files. I am more comfortable with that.
 
+If you prefer to include style in each component, that's not a problem. But, you should consider locating a default or shared styling here.
+
+You can rename it to css or styles if you don't use scss/sass in your project.
