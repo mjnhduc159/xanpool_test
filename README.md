@@ -2,6 +2,9 @@
 
 In the project directory, you can run:
 
+### `npm install`
+Launches the node modules.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -37,3 +40,9 @@ Each component has a test file to help us maintain them because they used widely
 ### 3. Pages folder
 The pages folder reflects the routes of the application. Each component inside this folder has its own route.
 A page component will contain children from components folder, parts folder, or its own subfolder. It has its own state, and usually call some services as well.
+### 4. Parts
+The parts folder is almost the same as components folder. It contains a reusable components that used in the pages.
+The difference is that components in parts folder reflect parts of a page, like footer, sidebar, and header, while the components folder contains standalone UI components like button, form, or input field.
+Sometime, A component in parts can use some components from the components folder.
+### 5. Utils
+The utils folder is just a place to locate some utility functions that used repeatedly in the project. Files in the utils folder should only contain some functions like date formatting, string conversion, etc.
