@@ -46,3 +46,6 @@ The difference is that components in parts folder reflect parts of a page, like 
 Sometime, A component in parts can use some components from the components folder.
 ### 5. Utils
 The utils folder is just a place to locate some utility functions that used repeatedly in the project. Files in the utils folder should only contain some functions like date formatting, string conversion, etc.
+
+### 6. __tests__
+The test folder is just a place to locate some unit test in the project. 
