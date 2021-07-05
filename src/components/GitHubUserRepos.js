@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/SearchBar';
-import RepoList from '../components/RepoList';
+import SearchBar from './SearchBar';
+import RepoList from './RepoList';
 import axios from 'axios';
 
 
@@ -18,13 +18,13 @@ class GitHubUserRepos extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  getRepos(username){
+  getRepos(username) {
     return axios.get('https://api.github.com/users/' + username + '/repos', {
-        params: {
-          sort: 'pushed',
-          direction: this.state.sortDirection
-        }
-      })
+      params: {
+        sort: 'pushed',
+        direction: this.state.sortDirection
+      }
+    })
       .catch(function (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -33,35 +33,8 @@ class GitHubUserRepos extends Component {
       });
   }
 
-  getReadMe(username, repo){
-    return axios.get('https://raw.githubusercontent.com/' + username +'/'+ repo + '/master/README.md',
-      {headers: { 'Accept': 'application/vnd.github.html' }}
-      ).then((response) => {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-        }
-      });
-  }
-
-  getListTrees(username, repo){
-    return axios.get('https://api.github.com/repos/' + username +'/'+ repo + '/git/trees/master?recursive=1',
-      {headers: { 'Accept': 'application/vnd.github.html' }}
-      ).then((response) => {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        if (error.response) {
-          console.log(error.response.data);
-          console.log(error.response.status);
-        }
-      });
-  }
   updateRepos(response) {
-    this.setState({ 
+    this.setState({
       repos: response ? response.data : null
     })
   }
@@ -78,14 +51,14 @@ class GitHubUserRepos extends Component {
 
   handleSortChange(direction) {
     this.setState({ sortDirection: direction }, () => {
-      this.getRepos(this.state.searchText).then(this.updateRepos.bind(this));      
-    });    
+      this.getRepos(this.state.searchText).then(this.updateRepos.bind(this));
+    });
   }
 
   render() {
     return (
       <div>
-        <SearchBar 
+        <SearchBar
           searchText={this.state.searchText}
           sortOrder={this.state.sortOrder}
           onSearchTextInput={this.handleSearchTextInput}
@@ -93,8 +66,8 @@ class GitHubUserRepos extends Component {
         />
 
         <hr />
-        
-        <RepoList 
+
+        <RepoList
           repos={this.state.repos}
           top={this.props.top}
           onSortChange={this.handleSortChange}

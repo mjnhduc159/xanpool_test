@@ -10,7 +10,7 @@ class RepoList extends Component {
 
     this.handleSortChange = this.handleSortChange.bind(this);
   }
-  
+
   handleSortChange(direction) {
     this.props.onSortChange(direction);
   }
@@ -22,7 +22,7 @@ class RepoList extends Component {
       );
     }
     var rows = [];
-    this.props.repos.slice(0, this.props.top).forEach(function(repo) {
+    this.props.repos.slice(0, this.props.top).forEach(function (repo) {
       rows.push(<RepoRow repo={repo} key={repo.name} />);
     });
     return (

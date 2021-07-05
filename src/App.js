@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import GitHubUserRepos from './Utils/GitHubUserRepos';
+import GitHubUserRepos from './components/GitHubUserRepos';
 import logo from './assets/images/logo.png';
 import './assets/scss/App.scss';
-//https://github.com/ericvilleneuve/react-github-repo-search
+
+
 class App extends Component {
   render() {
     return (
